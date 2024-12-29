@@ -7,18 +7,21 @@ export const styles = StyleSheet.create({
     gap: 4,
     width: "100%",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     marginTop: -30,
+    paddingRight: 24,
+    paddingLeft: 24,
   },
   input: {
     fontSize: 16,
     color: "#F2F2F2",
-    fontFamily: "Inter",
     backgroundColor: "#262626",
     height: 54,
     width: 271,
     padding: 16,
     borderRadius: 6,
+    borderWidth: 1,
+    lineHeight: 16 * 1.4
   },
   button: {
     backgroundColor: "#1E6F9F",
@@ -27,5 +30,6 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 1
   },
 });
