@@ -23,9 +23,15 @@ export const styles = StyleSheet.create({
   taskDescriptionContainer: {
     width: 235,
   },
-  description: {
+  task: {
     fontSize: 14,
     color: "#F2F2F2",
     fontFamily: "Inter",
+  },
+  taskCompleted: {
+    fontSize: 14,
+    color: "#808080",
+    fontFamily: "Inter",
+    textDecorationLine: "line-through"
   },
 });
