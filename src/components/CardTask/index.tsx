@@ -5,25 +5,38 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { styles } from "./styles";
 import { Trash } from "phosphor-react-native";
 
-export function CardTask() {
+type TaskProps = {
+  name: string;
+  isCompleted: boolean;
+  onRemove: () => void;
+  onCompleteTask: (isCompleted: boolean) => void;
+};
+
+export function CardTask({
+  name,
+  onCompleteTask,
+  onRemove,
+  isCompleted,
+}: TaskProps) {
   return (
     <View style={styles.cardTaskContainer}>
       <View style={styles.checkBoxContainer}>
         <BouncyCheckbox
+          onPress={(isCompleted) => onCompleteTask(isCompleted)}
           size={25}
-          fillColor="#4EA8DE"
-          text="Custom Checkbox"
-          iconStyle={{ borderColor: "#4EA8DE" }}
+          fillColor={isCompleted ? "#5E60CE" : "#4EA8DE"}
           innerIconStyle={{ borderWidth: 2 }}
         />
       </View>
 
       <View style={styles.taskDescriptionContainer}>
-        <Text style={styles.description}>Ir ao mercado</Text>
+        <Text style={isCompleted ? styles.taskCompleted : styles.task}>
+          {name}
+        </Text>
       </View>
 
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onRemove}>
           <Trash color="#808080" />
         </TouchableOpacity>
       </View>
