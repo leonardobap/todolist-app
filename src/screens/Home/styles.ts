@@ -6,4 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#1A1A1A",
     borderWidth: 1,
   },
+  flatList: {
+    flex: 1,
+  }
 });
